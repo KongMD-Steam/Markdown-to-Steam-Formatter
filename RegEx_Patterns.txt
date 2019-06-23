@@ -1,0 +1,59 @@
+The Perl Compatible Regular Expression (PCRE) patterns below are used to convert Markdown formatting to Steam formatting. They are in this notation:
+F: <Find field>
+R: <Replace field>
+
+Hack (used as a helper for Unordered List pattern matching)
+F: \z
+R: \r\n 
+
+Headers
+F: ^#+\s(.*)$
+R: [h1]$1[/h1]
+
+Strikethrough
+F: ~{2}(.*)~{2}
+R: [strike]$1[/strike]
+
+Bold (asterisks)
+F: ([^\*])\*{2}([^\*].*[^\*])\*{2}([^\*])
+R: $1[b]$2[/b]$3
+
+Bold (underscores)
+F: ([^_])_{2}([^_].*[^_])_{2}([^_])
+R: $1[b]$2[/b]$3
+
+Italic (asterisks)
+F: ([^\*])\*{1}([^\s\*]+[^\*])\*{1}
+R: $1[i]$2[/i]
+
+Italic (underscores)
+F: ([^_])_{1}([^\s_]+[^_])_{1}
+R: $1[i]$2[/i]
+
+Images
+F: !\[.*\]\(([^\s]*)(?>\s".*")*\)
+R: [img]$1][/img]
+
+URL
+F: ([^!])\[(.*)\]\(([^\s]*)(\s".*")*\)
+R: $1[url=$3]$2[/url]
+
+Unordered List (first element)
+F: ^([^\*].*(?>\r\n|\r|\n))\*\s(.*(\r\n|\r|\n))
+R: $1[list]\n[*]$2
+
+Unordered List (last element)
+F: ^\*\s(.*(?>\r\n|\r|\n))([^*])
+R: [*]$1[/list]\n\r$2
+
+Unordered List (all middle elements)
+F: ^\*\s(.*)
+R: [*]$1
+
+Code
+F: ^`{3}[a-z]*(?>\s){1,2}?((?>[^`\s]{3}.*(?>\s){1,2}?|.{0,2}(?>\s){1,2}?)+)(?>`{3})
+R: [code]\n$1[/code]
+
+Code (inline)
+F: ([^`])`([^\s`]+[^`])`
+R: $1'$2'
