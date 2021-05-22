@@ -6,9 +6,17 @@ Hack (used as a helper for Unordered List pattern matching)
 F: \z
 R: \r\n 
 
-Headers
-F: ^#+\s(.*)$
+Header 1
+F: ^#\s(.*)$
 R: [h1]$1[/h1]
+
+Header 2
+F: ^##\s(.*)$
+R: [h2]$1[/h2]
+
+Header 3
+F: ^###\s(.*)$
+R: [h3]$1[/h3]
 
 Strikethrough
 F: ~{2}(.*)~{2}
