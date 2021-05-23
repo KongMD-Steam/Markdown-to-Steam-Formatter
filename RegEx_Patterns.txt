@@ -15,7 +15,7 @@ F: ^##\s(.*)$
 R: [h2]$1[/h2]
 
 Header 3
-F: ^###\s(.*)$
+F: ^###+\s(.*)$
 R: [h3]$1[/h3]
 
 Strikethrough
