@@ -1,5 +1,7 @@
 # Markdown Formatting
 ## Start Test!
+### More headers!
+#### Unsupported header, but should render the same as above.
 #1 in the galaxy
 
 Horizontal rules!
