@@ -18,6 +18,10 @@ Header 3
 F: ^###+\s(.*)$
 R: [h3]$1[/h3]
 
+Horizontal Rule
+F: ^[*-_]{3,}$
+R: [hr][/hr]
+
 Strikethrough
 F: ~{2}(.*)~{2}
 R: [strike]$1[/strike]
