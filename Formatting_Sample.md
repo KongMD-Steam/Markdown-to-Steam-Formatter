@@ -1,6 +1,17 @@
 # Markdown Formatting
 ## Start Test!
+### More headers!
+#### Unsupported header, but should render the same as above.
 #1 in the galaxy
+
+Horizontal rules!
+With asterisks,
+***
+hyphens
+---
+and underscores
+___
+
 Emphasis, aka italics, with *asterisks* or _underscores_.
 Strong emphasis, aka bold, with **asterisks** or __underscores__.
 Combined emphasis with **asterisks and _underscores_**.

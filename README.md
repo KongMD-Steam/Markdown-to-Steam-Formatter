@@ -27,3 +27,4 @@ See a RegEx pattern that needs improvement? Send in a Pull Request with some exa
 
 ## Credits ## 
 * KongMD - NPP macro and RegEx patterns
+* GreatGrogrodor - Extended support for steam formatting.
